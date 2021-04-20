@@ -6,7 +6,7 @@
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
         <meta name="viewport" content="initial-scale=1.0, width=device-width">
         <link rel="stylesheet" href="./test.css">
-        <title>오늘의 음식</title>
+        <title>오늘의 메뉴</title>
     </head>
     <body>
         <div id="test">
@@ -26,7 +26,7 @@
                 <div class="title-wrap">
                     <!-- 타이틀 -->
                     <center>
-                        <h2 class="title">{{ title }}</h2>
+                        <h3 class="title">{{ title }}</h3>
                     </center>
                 </div>
 
@@ -36,7 +36,7 @@
                         <img id="question_image" src="assets/question_0.png" width="100" height="100">
                     </center>
                     <center>
-                        <h1 class="question">{{ question[index] }}</h1>
+                        <h2 class="question">{{ question[index] }}</h2>
                     </center>
                     <!--이미지-->                    
                 </div>
@@ -47,9 +47,12 @@
                             <!-- 버튼 -->
                             <center>
                                 <button class='answer-btn1' v-on:click="answerClicked(1)">{{answer1[index]}}</button>
-                                <button class='answer-btn2' v-on:click="answerClicked(2)">{{answer2[index]}}</button>
+                               
                             </center>
                         </div>
+                        <center>
+                        <button class='answer-btn2' v-on:click="answerClicked(2)">{{answer2[index]}}</button>
+                    </center>
                     </div>
                     <center>
                         <div class="current-question">{{current[index]}}</div>
@@ -58,13 +61,18 @@
             </div> <!--main-->
 
             <div id="loading" class = "loading-wrap">
-                <!-- 결과 -->
+                <!-- 로딩화면 -->
                 <div class = "loading">오늘 먹을 것은<br><span id="loading_dot">{{ loading }}</span></div>
             </div>
 
             <div id="result" class = "result-wrap">
                 <!-- 결과 -->
+                <center>
+                <img id="result_image" src="assets/question_0.png" width="400">
                 <div class = "result">{{ result }}</div>
+                <div class = "result_name">{{ result_name }}</div>
+                <div class = "result_explain">{{ result_explain }}</div>
+            </center>
             </div>
         </div>
         <script src="./test.js"></script>
